@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: hunger_games_development
+  pool: 5
+  username: daviskoh
+  password:
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: hunger_games_test
+  pool: 5
+  username: daviskoh
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: hunger_games_production
+  pool: 5
+  username: daviskoh
+  password:
