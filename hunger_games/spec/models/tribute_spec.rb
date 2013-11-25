@@ -5,7 +5,11 @@ describe Tribute do
   #   $t = self
   # end
 
-  let(:tribute) { Tribute.new(citizen_id: 1) }
+  let(:tribute) { Tribute.new }
 
-  
+  describe '::new' do 
+    it 'has either volunteered or not' do 
+      expect(tribute).to have(1).errors_on(:volunteer)
+    end
+  end
 end

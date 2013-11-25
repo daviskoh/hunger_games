@@ -8,7 +8,7 @@ describe Citizen do
   let(:citizen) { Citizen.new }
 
   describe '::new' do 
-    @attr = [:type, :name, :age, :sex, :volunteer, :alive]
+    @attr = [:type, :name, :age, :sex, :alive]
 
     @attr.each do |attri|
       it "isnt valid without #{attri}" do
@@ -17,5 +17,5 @@ describe Citizen do
     end
   end
 
-  
+
 end
