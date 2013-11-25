@@ -6,5 +6,7 @@ class Sponsorship < ActiveRecord::Base
     Tribute.find(self.tribute_id)
   end
 
-  
+  def sponsor
+    Sponsor.find(self.tribute_id) 
+  end
 end
