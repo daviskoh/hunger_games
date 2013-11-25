@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Citizen do 
-  before do
-    $t = self
-  end
+  # before do
+  #   $t = self
+  # end
 
   let(:citizen) { Citizen.new }
 
