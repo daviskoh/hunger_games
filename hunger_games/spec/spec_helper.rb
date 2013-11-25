@@ -40,3 +40,11 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+def full_test(desc_string, it_string, &block)
+  describe desc_string do 
+    it it_string do
+      yield
+    end
+  end
+end
