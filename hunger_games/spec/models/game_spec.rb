@@ -35,4 +35,8 @@ describe Game do
     $t.game.save
     $t.expect($t.game.rounds.include?($t.round)).to $t.be_true
   end
+
+  # test '#zones', 'has 6 zones' do 
+  #   $t.expect($t.game).to $t.have(6).zones
+  # end
 end
