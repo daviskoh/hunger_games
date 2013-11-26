@@ -9,7 +9,7 @@ describe Citizen do
   let(:district) { District.new(number: 1) }
 
   describe '::new' do 
-    @attr = [:type, :name, :age, :sex, :alive, :district_id]
+    @attr = [:name, :age, :sex, :alive, :district_id]
 
     @attr.each do |attri|
       it "isnt valid without #{attri}" do

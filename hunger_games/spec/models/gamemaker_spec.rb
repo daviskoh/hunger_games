@@ -11,6 +11,8 @@ describe Gamemaker do
 
   describe '#start_game' do 
     before do 
+      # create factory, 12 districts
+      # create factory, 12 males, 12 females
       gamemaker.start_game
     end
 
@@ -19,7 +21,8 @@ describe Gamemaker do
     end
 
     it 'can reap' do 
-
+      gamemaker.reap
+      expect(Game.last).to have(24).tributes
     end
   end
 end

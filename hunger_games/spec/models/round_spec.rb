@@ -7,7 +7,7 @@ describe Round do
 
   describe '::new' do
     before do 
-      $t = self
+      # $t = self
       game.save
     end
 
@@ -24,10 +24,19 @@ describe Round do
     end
   end
 
-  test '#tributes', 'can have many tributes' do 
-    $t.tribute.game_id = $t.game.id
-    $t.round.tributes << $t.tribute
+  # test '#tributes', 'can have many tributes' do 
+  #   $t.tribute.game_id = $t.game.id
+  #   $t.round.tributes << $t.tribute
 
-    $t.expect($t.round.tributes.include?($t.tribute)).to $t.be_true
+  #   $t.expect($t.round.tributes.include?($t.tribute)).to $t.be_true
+  # end
+
+  describe '#tributes' do 
+    it 'can have many tributes' do 
+      tribute.game_id = game.id
+      round.tributes << tribute
+
+      expect(round.tributes.include?(tribute)).to be_true
+    end
   end
 end
