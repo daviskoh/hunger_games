@@ -41,7 +41,7 @@ RSpec.configure do |config|
   config.order = "random"
 end
 
-def full_test(desc_string, it_string, &block)
+def test(desc_string, it_string, &block)
   describe desc_string do 
     it it_string do
       yield
