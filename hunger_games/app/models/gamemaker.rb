@@ -11,7 +11,7 @@ class Gamemaker
   private
 
   def get_tribute(district_id, sex)
-    candidates = Citizen.where("district_id = '#{district_id}' AND sex = '#{sex}' AND (age > 11 OR age < 19)")
+    candidates = Citizen.where("district_id = '#{district_id}' AND sex = '#{sex}' AND (age > 11 OR age < 19) AND type IS NULL")
     # pick random male from district
     candidate = candidates.order("random()").first #sample at SQL level
     

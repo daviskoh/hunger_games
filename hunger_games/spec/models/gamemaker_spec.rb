@@ -34,8 +34,8 @@ describe Gamemaker do
     end
 
     it 'can reap' do
-      binding.pry 
       expect(Game.last).to have(24).tributes
     end
+
   end
 end
