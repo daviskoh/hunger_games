@@ -1,4 +1,4 @@
 class Tribute < Citizen
-  validates :volunteer, presence: true
+  validates :volunteer, :game_id, presence: true
   has_many :sponsors, through: :sponsorships, source: :sponsor
 end

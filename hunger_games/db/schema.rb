@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125223914) do
+ActiveRecord::Schema.define(version: 20131126001029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,21 @@ ActiveRecord::Schema.define(version: 20131125223914) do
     t.datetime "updated_at"
     t.string   "rating"
     t.integer  "district_id",                 null: false
+    t.integer  "game_id"
   end
 
   add_index "citizens", ["district_id"], name: "index_citizens_on_district_id", using: :btree
+  add_index "citizens", ["game_id"], name: "index_citizens_on_game_id", using: :btree
 
   create_table "districts", force: true do |t|
     t.integer  "number",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", force: true do |t|
+    t.integer  "number"
+    t.integer  "zone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
