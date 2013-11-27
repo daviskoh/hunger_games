@@ -38,8 +38,11 @@ describe Gamemaker do
     end
 
     it 'does not reap the same tribute twice' do 
-      t = Game.last.tributes.where(id: Tribute.last.id)
-      expect(t.count).to eq(1)
+      # check all tributes to make sure non duplicate
+      Game.last.tributes.each do |trib|
+        trib_list = Game.last.tributes.where(id: trib.id)
+        expect(trib_list.count).to eq(1)
+      end
     end
   end
 end
