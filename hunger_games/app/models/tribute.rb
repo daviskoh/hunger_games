@@ -6,6 +6,7 @@ class Tribute < Citizen
   has_many :sponsors, through: :sponsorships#, source: :citizen
 
   def get_sponsor
-
+    self.sponsors << Sponsor.order("random()").first
+    self.save
   end
 end
