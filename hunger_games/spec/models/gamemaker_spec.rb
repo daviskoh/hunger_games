@@ -36,5 +36,10 @@ describe Gamemaker do
     it 'can reap' do
       expect(Game.last).to have(24).tributes
     end
+
+    it 'does not reap the same tribute twice' do 
+      t = Game.last.tributes.where(id: Tribute.last.id)
+      expect(t.count).to eq(1)
+    end
   end
 end

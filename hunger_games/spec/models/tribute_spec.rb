@@ -37,7 +37,6 @@ describe Tribute do
     end
 
     it 'can get assigned a sponsor' do 
-      binding.pry
       tribute.get_sponsor
       expect(tribute).to have(1).sponsors
     end
