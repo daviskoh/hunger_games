@@ -7,6 +7,8 @@ describe Tribute do
 
   let(:tribute) { Tribute.new }
   let(:game) { Game.new(number: 1) }
+  let!(:district) { District.new(number: 1) }
+  let(:citizen) { Citizen.create(name: "Steve", age: 12, sex: "male", alive: true, district_id: district.id) }
 
   describe '::new' do 
     # it 'has either volunteered or not' do 
@@ -19,6 +21,18 @@ describe Tribute do
       game.save
       tribute.game_id = game.id
       expect(tribute.game).to_not be_nil
+    end
+  end
+
+  describe '#get_sponsor' do
+    before do 
+      citizen.type = "Sponsor"
+      citizen.save
+    end
+
+    it 'can get assigned a sponsor' do 
+      tribute.get_sponsor
+      expect(tribute).to have(1).sponsors
     end
   end
 end

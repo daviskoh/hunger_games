@@ -36,6 +36,5 @@ describe Gamemaker do
     it 'can reap' do
       expect(Game.last).to have(24).tributes
     end
-
   end
 end
