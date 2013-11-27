@@ -9,4 +9,8 @@ class Tribute < Citizen
     self.sponsors << Sponsor.order("random()").first
     self.save
   end
+
+  def of_age?
+    self.age > 11 && self.age < 19
+  end
 end

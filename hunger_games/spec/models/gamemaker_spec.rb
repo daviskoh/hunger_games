@@ -44,5 +44,10 @@ describe Gamemaker do
         expect(trib_list.count).to eq(1)
       end
     end
+
+    it 'only reaps from citizens between ages of 12 and 18 inclusive' do 
+      of_age = Game.last.tributes.all? { |trib| trib.of_age? }
+      expect(of_age).to be_true
+    end
   end
 end
